@@ -1,10 +1,10 @@
 FROM node:alpine
 
-## repository mirror to aliyum
+## 添加阿里云镜像
 RUN cp /etc/apk/repositories /etc/apk/repositories.bak
 RUN echo "http://mirrors.aliyun.com/alpine/v3.6/main/" > /etc/apk/repositories
 
-## timezone
+## 设置时区
 RUN apk update
 RUN apk add curl bash tree tzdata make
 RUN cd /usr/share/zoneinfo && ls
